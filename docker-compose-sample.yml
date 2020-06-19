@@ -1,7 +1,7 @@
 version: "3"
 services:
   nginx:
-    container_name: dcntmj_nginx
+    container_name: dcnmtj_nginx
     build:
       context: nginx
       args:
@@ -22,10 +22,10 @@ services:
     tty: true
     restart: always
     networks:
-      - dcntmj
+      - dcnmtj
 
   tomcat:
-    container_name: dcntmj_tomcat
+    container_name: dcnmtj_tomcat
     build:
       context: tomcat
       args:
@@ -43,10 +43,10 @@ services:
       SOURCES_REPLACE: "${SOURCES_REPLACE}"
       TZ: "${TZ}"
     networks:
-      - dcntmj
+      - dcnmtj
 
   mysql:
-    container_name: dcntmj_mysql
+    container_name: dcnmtj_mysql
     build:
       context: mysql
       args:
@@ -62,10 +62,10 @@ services:
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
       TZ: "${TZ}"
     networks:
-      - dcntmj
+      - dcnmtj
 
   mongodb:
-    container_name: dcntmj_mongodb
+    container_name: dcnmtj_mongodb
     build:
       context: mongodb
       args:
@@ -84,12 +84,12 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - dcntmj
+      - dcnmtj
     command:
       --auth
 
   redis:
-    container_name: dcntmj_redis
+    container_name: dcnmtj_redis
     build:
       context: redis
       args:
@@ -107,10 +107,10 @@ services:
     tty: true
     entrypoint: ["redis-server", "/etc/redis.conf"]
     networks:
-      - dcntmj
+      - dcnmtj
 
   rabbitmq:
-    container_name: dcntmj_rabbitmq
+    container_name: dcnmtj_rabbitmq
     build:
       context: rabbitmq
       args:
@@ -129,7 +129,7 @@ services:
     tty: true
     restart: always
     networks:
-      - dcntmj
+      - dcnmtj
 
   phpredisadmin:
     container_name: dcntmj_phpredisadmin
@@ -144,10 +144,10 @@ services:
       REDIS_1_HOST: "redis"
       REDIS_1_PORT: "6379"
     networks:
-      - dcntmj
+      - dcnmtj
 
   nodejs:
-    container_name: dcntmj_nodejs
+    container_name: dcnmtj_nodejs
     build:
       context: nodejs
       args:
@@ -164,7 +164,7 @@ services:
     stdin_open: true
     tty: true
     networks:
-      - dcntmj
+      - dcnmtj
 
 networks:
-  dcntmj:
+  dcnmtj:
