@@ -13,4 +13,4 @@ COPY source /var/local/source
 ENV MC="-j2"
 ENV TOMCAT_JAVA_OPTS=${TOMCAT_JAVA_OPTS}
 
-WORKDIR /usr/local/tomcat/webapps
+WORKDIR /app/webapps
