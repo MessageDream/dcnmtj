@@ -10,7 +10,7 @@ ARG MAVEN_VERSION
 
 RUN cd /home
 
-COPY extensions /tmp/extensions
+#COPY extensions /tmp/extensions
 COPY sh /tmp/extensions
 COPY source /var/local/source
 
