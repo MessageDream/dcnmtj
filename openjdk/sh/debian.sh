@@ -19,7 +19,7 @@ fi
 if [ "${MAVEN_VERSION}" != "" ]; then
   echo "---------- Install MAVEN ${MAVEN_VERSION}----------"
   ls -lh /tmp/extensions/${MAVEN_VERSION}
-  tar -xvf /tmp/extensions/${MAVEN_VERSION}
+  tar -zxvf /tmp/extensions/${MAVEN_VERSION}
   mv apache-maven-3.6.3 /usr/local/maven
   ln -s /usr/local/maven/bin/mvn  /usr/bin/mvn
   echo 'export MAVEN_HOME=/usr/local/maven' >> ~/.profile
