@@ -16,4 +16,14 @@ if [ "${TZ}" != "" ]; then
   cp "/usr/share/zoneinfo/${TZ}" /etc/localtime && echo "${TZ}" >/etc/timezone
 fi
 
+if [ "${MAVEN_VERSION}" != "" ]; then
+  echo "---------- Install MAVEN ${MAVEN_VERSION}----------"
+  ls -lh /tmp/extensions/${MAVEN_VERSION}
+  tar -zxvf /tmp/extensions/${MAVEN_VERSION}
+  mv apache-maven-3.6.3 /usr/local/maven
+  ln -s /usr/local/maven/bin/mvn  /usr/bin/mvn
+  echo 'export MAVEN_HOME=/usr/local/maven' >> ~/.profile
+  echo 'export PATH=$MAVEN_HOME/bin:$PATH' >> ~/.profile
+fi
+
 echo '--------------------end--------------------------'
