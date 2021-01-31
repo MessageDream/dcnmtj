@@ -40,6 +40,7 @@ services:
     restart: always
     environment:
       TOMCAT_JAVA_OPTS: "${TOMCAT_JAVA_OPTS}"
+      JAVA_OPTS: "${TOMCAT_JAVA_OPTS}"
       TZ: "${TZ}"
     networks:
       - tcmr
@@ -103,7 +104,7 @@ services:
     restart: always
     environment:
       SA_PASSWORD: "${MSSQL_SA_PASSWORD}"
-      ACCEPT_EULA: Y
+      ACCEPT_EULA: "Y"
       TZ: "${TZ}"
     networks:
       - tcmr

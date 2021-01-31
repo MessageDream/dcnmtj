@@ -9,7 +9,7 @@ if [ "${DEBIAN_REPOSITORIES_REPLACE}" = "true" ]; then
 fi
 
 echo "---------- Install general dependencies ----------"
-apt-get update && apt-get upgrade && apt-get install -y git cmake apt-utils openssl libssl-dev zip unzip libc-dev zlib1g-dev libz-dev libpq-dev libcurl4-openssl-dev net-tools
+apt-get update && apt-get upgrade -y && apt-get install -y git cmake apt-utils openssl libssl-dev zip unzip libc-dev zlib1g-dev libz-dev libpq-dev libcurl4-openssl-dev net-tools
 
 echo "---------- clean cache ----------"
 apt-get clean
